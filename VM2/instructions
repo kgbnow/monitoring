@@ -1,0 +1,12 @@
+download node-exporter
+
+downgload grafana from site
+sudo dpkg -i grafana_9.5.2_amd64.deb
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable grafana-server
+sudo /bin/systemctl start grafana-server
+
+ apt install nginx
+wget https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v>
+cp defaults to sites-enabled
+
