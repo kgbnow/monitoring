@@ -4,10 +4,10 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=node_exporter
-Group=node_exporter
+User=root
+Group=root
 Type=simple
-ExecStart=/home/gnome/bmstu/monitoring/VM1/node_exporter/node_exporter
+ExecStart=/home/gnome/bmstu/monitoring/VM2/node_exporter/node_exporter
 
 [Install]
 WantedBy=default.target
