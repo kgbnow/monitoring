@@ -23,8 +23,8 @@ groups:
           summary: High CPU usage
           description: CPU usage is above 90%
       - alert: HighRamUsage
-        expr: (node_memory_MemTotal - node_memory_MemFree - node_memory_Cached) /
-          node_memory_MemTotal * 100 > 90
+        expr: (node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Cached_bytes) /
+          node_memory_MemTotal_bytes * 100 > 90
         for: 5m
         labels:
           severity: warning
