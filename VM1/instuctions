@@ -1,0 +1,3 @@
+promtetheus, alertmanager, nodeexporter 
+cp configs to paths
+cp services to systemd

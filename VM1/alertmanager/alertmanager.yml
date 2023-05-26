@@ -1,0 +1,20 @@
+---
+global:
+  resolve_timeout: 5m
+route:
+  receiver: telegram
+  group_by:
+    - alertname
+receivers:
+  - name: telegram
+    telegram_configs:
+      - api_url: https://api.telegram.org/bot6199535895:AAELk5BwUJfkdnRIblXH3KICHF0z6mxxNus/sendMessage
+        chat_id: 460421062
+inhibit_rules:
+  - source_match:
+      severity: critical
+    target_match:
+      severity: warning
+    equal:
+      - alertname
+
