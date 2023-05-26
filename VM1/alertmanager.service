@@ -4,10 +4,10 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=alertmanager
-Group=alertmanager
+User=root
+Group=root
 Type=simple
-ExecStart=/path/to/alertmanager-binary —config.file=/home/gnome/bmstu/monitoring/VM1/alertmanager/alertmanager
+ExecStart=/home/gnome/bmstu/monitoring/VM1/alertmanager/alertmanager --config.file=/home/gnome/bmstu/monitoring/VM1/alertmanager/alertmanager.yml
 
 [Install]
 WantedBy=default.target

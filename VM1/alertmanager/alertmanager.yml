@@ -8,8 +8,9 @@ route:
 receivers:
   - name: telegram
     telegram_configs:
-      - api_url: https://api.telegram.org/bot6199535895:AAELk5BwUJfkdnRIblXH3KICHF0z6mxxNus/sendMessage
+      - api_url: https://api.telegram.org
         chat_id: 460421062
+        bot_token: 6199535895:AAELk5BwUJfkdnRIblXH3KICHF0z6mxxNus
 inhibit_rules:
   - source_match:
       severity: critical
