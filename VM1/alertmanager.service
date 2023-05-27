@@ -7,7 +7,9 @@ After=network-online.target
 User=root
 Group=root
 Type=simple
-ExecStart=/home/user/monitoring/VM1/alertmanager-0.25.0.linux-amd64/alertmanager --config.file=/home/user/monitoring/VM1/alertmanager-0.25.0.linux-amd64/alertmanager.yml
+ExecStart=/home/user/monitoring/VM1/alertmanager-0.25.0.linux-amd64/alertmanager \
+--config.file=/home/user/monitoring/VM1/alertmanager-0.25.0.linux-amd64/alertmanager.yml \
+--cluster.advertise-address=0.0.0.0:9093
 
 [Install]
 WantedBy=default.target
