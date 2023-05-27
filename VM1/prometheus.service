@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Group=root
 Type=simple
-ExecStart=/home/gnome/bmstu/monitoring/VM1/prometheus/prometheus --config.file=/home/gnome/bmstu/monitoring/VM1/prometheus/prometheus.yml
+ExecStart=/home/user/monitoring/VM1/prometheus-2.44.0.linux-amd64/prometheus --config.file=/home/user/monitoring/VM1/prometheus-2.44.0.linux-amd64/prometheus.yml
 
 [Install]
 WantedBy=default.target
