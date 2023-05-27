@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Group=root
 Type=simple
-ExecStart=/home/gnome/bmstu/monitoring/VM2/nginx-prometheus-exporter
+ExecStart=/home/user/monitoring/VM2/nginx-prometheus-exporter
 
 [Install]
 WantedBy=default.target

@@ -15,6 +15,7 @@ rm -r ./alertmanager
 mv ./prometheus.service /etc/systemd/system/
 mv ./alertmanager.service /etc/systemd/system/
 mv ./node-exporter.service /etc/systemd/system/
+systemctl daemon-reload
 systemctl enable prometheus.service
 systemctl enable alertmanager.service
 systemctl enable node-exporter.service
