@@ -10,7 +10,7 @@ Type=simple
 ExecStart=/home/user/monitoring/VM1/prometheus-2.44.0.linux-amd64/prometheus \
 --config.file=/home/user/monitoring/VM1/prometheus-2.44.0.linux-amd64/prometheus.yml \
 --storage.tsdb.retention.time=20d \
---storage.tsdb.retention.size-8gb
+--storage.tsdb.retention.size=8GB
 
 [Install]
 WantedBy=default.target
