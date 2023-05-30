@@ -73,7 +73,7 @@ if [ ! -d "$INSTALL_DIR/prometheus-$PROMETHEUS_VERSION.linux-amd64" ]; then
 prometheus_url="https://github.com/prometheus/prometheus/releases/download/v$PROMETHEUS_VERSION/prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz"
 prometheus_filename="prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz"
 if ! download_and_extract "$prometheus_url" "$prometheus_filename"; then
-    echo "Пропуск установки Prometheus"
+    echo "Выход из скрипта."
     exit 1
 fi
 
@@ -103,7 +103,7 @@ if [ ! -d "$INSTALL_DIR/alertmanager-$ALERTMANAGER_VERSION.linux-amd64" ]; then
 alertmanager_url="https://github.com/prometheus/alertmanager/releases/download/v$ALERTMANAGER_VERSION/alertmanager-$ALERTMANAGER_VERSION.linux-amd64.tar.gz"
 alertmanager_filename="alertmanager-$ALERTMANAGER_VERSION.linux-amd64.tar.gz"
 if ! download_and_extract "$alertmanager_url" "$alertmanager_filename"; then
-    echo "Пропуск установки Alertmanager"
+    echo "Выход из скрипта."
     exit 1
 fi
 
@@ -132,7 +132,7 @@ if [ ! -d "$INSTALL_DIR/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64" ]; the
 node_exporter_url="https://github.com/prometheus/node_exporter/releases/download/v$NODE_EXPORTER_VERSION/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64.tar.gz"
 node_exporter_filename="node_exporter-$NODE_EXPORTER_VERSION.linux-amd64.tar.gz"
 if ! download_and_extract "$node_exporter_url" "$node_exporter_filename"; then
-    echo "Пропуск установки Node Exporter"
+    echo "Выход из скрипта."
     exit 1
 fi
 
