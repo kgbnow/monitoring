@@ -72,7 +72,10 @@ if [ ! -d "$INSTALL_DIR/prometheus-$PROMETHEUS_VERSION.linux-amd64" ]; then
 # Загрузка и установка Prometheus
 prometheus_url="https://github.com/prometheus/prometheus/releases/download/v$PROMETHEUS_VERSION/prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz"
 prometheus_filename="prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz"
-download_and_extract "$prometheus_url" "$prometheus_filename"
+if ! download_and_extract "$prometheus_url" "$prometheus_filename"; then
+    echo "Пропуск установки Prometheus"
+    exit 1
+fi
 
 # Копирование файла конфигурации Prometheus
 cp "$CONFIG_DIR/prometheus.yml" "$INSTALL_DIR/prometheus-$PROMETHEUS_VERSION.linux-amd64/"
@@ -99,7 +102,10 @@ if [ ! -d "$INSTALL_DIR/alertmanager-$ALERTMANAGER_VERSION.linux-amd64" ]; then
 # Загрузка и установка Alertmanager
 alertmanager_url="https://github.com/prometheus/alertmanager/releases/download/v$ALERTMANAGER_VERSION/alertmanager-$ALERTMANAGER_VERSION.linux-amd64.tar.gz"
 alertmanager_filename="alertmanager-$ALERTMANAGER_VERSION.linux-amd64.tar.gz"
-download_and_extract "$alertmanager_url" "$alertmanager_filename"
+if ! download_and_extract "$alertmanager_url" "$alertmanager_filename"; then
+    echo "Пропуск установки Alertmanager"
+    exit 1
+fi
 
 # Копирование файла конфигурации Alertmanager
 cp "$CONFIG_DIR/alertmanager.yml" "$INSTALL_DIR/alertmanager-$ALERTMANAGER_VERSION.linux-amd64/"
@@ -125,7 +131,10 @@ if [ ! -d "$INSTALL_DIR/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64" ]; the
 # Загрузка и установка Node Exporter
 node_exporter_url="https://github.com/prometheus/node_exporter/releases/download/v$NODE_EXPORTER_VERSION/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64.tar.gz"
 node_exporter_filename="node_exporter-$NODE_EXPORTER_VERSION.linux-amd64.tar.gz"
-download_and_extract "$node_exporter_url" "$node_exporter_filename"
+if ! download_and_extract "$node_exporter_url" "$node_exporter_filename"; then
+    echo "Пропуск установки Node Exporter"
+    exit 1
+fi
 
 # Обновление сервиса Node Exporter
 update_service "node-exporter.service" "./node-exporter.service" "$NODE_EXPORTER_VERSION"
