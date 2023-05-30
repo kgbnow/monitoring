@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/alertmanager-@VERSION@.linux-amd64/ \
+ExecStart=/opt/alertmanager-@VERSION@.linux-amd64/alertmanager \
 --config.file=/opt/alertmanager-@VERSION@.linux-amd64/alertmanager.yml \
 --cluster.advertise-address=0.0.0.0:9093
 
