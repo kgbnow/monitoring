@@ -120,7 +120,7 @@ else
 fi
 
 # Проверка наличия директории Node Exporter с нужной версией в папке установки
-if [ ! -d "$INSTALL_DIR/node_exporter-$NODE_EXPORTER.linux-amd64" ]; then
+if [ ! -d "$INSTALL_DIR/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64" ]; then
 
 # Загрузка и установка Node Exporter
 node_exporter_url="https://github.com/prometheus/node_exporter/releases/download/v$NODE_EXPORTER_VERSION/node_exporter-$NODE_EXPORTER_VERSION.linux-amd64.tar.gz"
