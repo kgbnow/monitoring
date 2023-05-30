@@ -4,10 +4,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=root
-Group=root
 Type=simple
-ExecStart=/home/user/monitoring/VM1/node_exporter-1.5.0.linux-amd64/node_exporter
+ExecStart=/opt/node_exporter-@VERSION@.linux-amd64/node_exporter
 
 [Install]
 WantedBy=default.target
